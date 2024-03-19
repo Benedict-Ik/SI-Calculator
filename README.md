@@ -1,3 +1,6 @@
-# si_calculator
+# Dropdown Button 
 
-A new Flutter project.
+Here we explain the following:
+
+* How to create a Dropdown Button widget
+* How to assign items to DropdownMenuItem
