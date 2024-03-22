@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:si_calculator/widgets/DropdownButton.dart';
+import 'package:si_calculator/widgets/SimpleInterestForm.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,11 +13,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Stateful Widget',
+        title: 'Simple Interest Calculator App',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
+          appBarTheme: AppBarTheme(
+            backgroundColor: Colors.blueAccent,
+            // color: Colors.white
+          ),
         ),
-        home: const FavouriteCity());
+        home: SimpleInterestForm());
   }
 }
