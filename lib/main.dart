@@ -15,9 +15,12 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Simple Interest Calculator App',
         theme: ThemeData(
+          primaryColor: Colors.purple,
+          brightness: Brightness.dark,
           useMaterial3: true,
           appBarTheme: AppBarTheme(
             backgroundColor: Colors.blueAccent,
+            foregroundColor: Colors.white,
             // color: Colors.white
           ),
         ),

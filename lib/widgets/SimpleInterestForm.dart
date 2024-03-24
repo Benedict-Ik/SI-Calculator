@@ -16,6 +16,7 @@ class _SimpleInterestFormState extends State<SimpleInterestForm> {
 
   @override
   Widget build(BuildContext context) {
+    TextStyle? textStyle = Theme.of(context).textTheme.titleMedium;
     return Scaffold(
       // resizeToAvoidBottomInset: false,
       appBar: AppBar(
@@ -32,9 +33,11 @@ class _SimpleInterestFormState extends State<SimpleInterestForm> {
                       top: _minimumPadding, bottom: _minimumPadding),
                   child: TextField(
                     keyboardType: TextInputType.number,
+                    style: textStyle,
                     decoration: InputDecoration(
                         labelText: "Principal",
                         hintText: "Enter Principal e.g 2000",
+                        labelStyle: textStyle,
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(5.0))),
                   )),
@@ -42,9 +45,11 @@ class _SimpleInterestFormState extends State<SimpleInterestForm> {
                   padding: EdgeInsets.only(
                       top: _minimumPadding, bottom: _minimumPadding),
                   child: TextField(
+                    style: textStyle,
                     decoration: InputDecoration(
                         labelText: "Rate of Interest",
                         hintText: "Enter the interest agreed",
+                        labelStyle: textStyle,
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(5.0))),
                   )),
@@ -58,9 +63,11 @@ class _SimpleInterestFormState extends State<SimpleInterestForm> {
                               right: minimumPadding * 5.0),
                           child: TextField(
                             keyboardType: TextInputType.number,
+                            style: textStyle,
                             decoration: InputDecoration(
                               labelText: "Term",
                               hintText: "Time in years",
+                              labelStyle: textStyle,
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(5.0)),
                             ),
@@ -85,7 +92,17 @@ class _SimpleInterestFormState extends State<SimpleInterestForm> {
                     children: [
                       Expanded(
                           child: ElevatedButton(
-                              child: Text("Calculate"),
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                        Colors.blue),
+                              ),
+                              child: Text(
+                                "Calculate",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                              ),
                               onPressed: () {
                                 // Action intended
                               })),
@@ -94,7 +111,10 @@ class _SimpleInterestFormState extends State<SimpleInterestForm> {
                       ),
                       Expanded(
                           child: ElevatedButton(
-                              child: Text("Reset"),
+                              child: Text(
+                                "Reset",
+                                style: textStyle,
+                              ),
                               onPressed: () {
                                 // Action intended
                               }))
@@ -103,7 +123,10 @@ class _SimpleInterestFormState extends State<SimpleInterestForm> {
               Padding(
                   padding: EdgeInsets.all(minimumPadding * 4.0),
                   child: Center(
-                    child: Text("Data"),
+                    child: Text(
+                      "Data",
+                      style: textStyle,
+                    ),
                   )),
             ],
           )),
