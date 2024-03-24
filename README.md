@@ -2,7 +2,7 @@
 
 Here we begin styling and theming the Simple Interest app.
 
-We learn how to apply themes to the full app and specific parts of it.
+We learnt how to apply themes to the full app and specific parts of it.
 
 We defined a general theme and embeded properties within using the **Theme** widget.
 
