@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:si_calculator/widgets/DropdownButton.dart';
 import 'package:si_calculator/widgets/MoneyImageAsset.dart';
 
 class SimpleInterestForm extends StatefulWidget {
@@ -10,9 +11,14 @@ class SimpleInterestForm extends StatefulWidget {
 
 class _SimpleInterestFormState extends State<SimpleInterestForm> {
   // Properties definition
-  var _currencies = ["Naira", "UK Pounds", "US Dollars", "Euros", "Others"];
-  var _currentItemSelected = "UK Pounds"; // default value
   final _minimumPadding = 5.0;
+
+  // Creating a custom Text Controller for all our text fields
+  TextEditingController principalController = TextEditingController();
+  TextEditingController roiController = TextEditingController();
+  TextEditingController termController = TextEditingController();
+
+  var displayResult = "";
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +33,7 @@ class _SimpleInterestFormState extends State<SimpleInterestForm> {
           child: ListView(
             scrollDirection: Axis.vertical,
             children: [
+              // Inserting MoneyImageAsset Custom Widget
               getMoneyImageAsset(),
               Padding(
                   padding: EdgeInsets.only(
@@ -34,6 +41,7 @@ class _SimpleInterestFormState extends State<SimpleInterestForm> {
                   child: TextField(
                     keyboardType: TextInputType.number,
                     style: textStyle,
+                    controller: principalController,
                     decoration: InputDecoration(
                         labelText: "Principal",
                         hintText: "Enter Principal e.g 2000",
@@ -46,6 +54,7 @@ class _SimpleInterestFormState extends State<SimpleInterestForm> {
                       top: _minimumPadding, bottom: _minimumPadding),
                   child: TextField(
                     style: textStyle,
+                    controller: roiController,
                     decoration: InputDecoration(
                         labelText: "Rate of Interest",
                         hintText: "Enter the interest agreed",
@@ -64,6 +73,7 @@ class _SimpleInterestFormState extends State<SimpleInterestForm> {
                           child: TextField(
                             keyboardType: TextInputType.number,
                             style: textStyle,
+                            controller: termController,
                             decoration: InputDecoration(
                               labelText: "Term",
                               hintText: "Time in years",
@@ -72,18 +82,8 @@ class _SimpleInterestFormState extends State<SimpleInterestForm> {
                                   borderRadius: BorderRadius.circular(5.0)),
                             ),
                           ))),
-                  Expanded(
-                      child: DropdownButton(
-                          items: _currencies.map((String value) {
-                            return DropdownMenuItem(
-                              value: value,
-                              child: Text(value),
-                            );
-                          }).toList(),
-                          value: "Naira",
-                          onChanged: (String? newValueSelected) {
-                            // code to be executed
-                          }))
+                  // Inserting DropDownButton Custom Widget
+                  DropDownButton(),
                 ],
               ),
               Padding(
@@ -105,6 +105,9 @@ class _SimpleInterestFormState extends State<SimpleInterestForm> {
                               ),
                               onPressed: () {
                                 // Action intended
+                                setState(() {
+                                  this.displayResult = _calculateTotalReturns();
+                                });
                               })),
                       SizedBox(
                         width: minimumPadding * 3.0,
@@ -117,6 +120,9 @@ class _SimpleInterestFormState extends State<SimpleInterestForm> {
                               ),
                               onPressed: () {
                                 // Action intended
+                                setState(() {
+                                  _reset();
+                                });
                               }))
                     ],
                   )),
@@ -124,12 +130,32 @@ class _SimpleInterestFormState extends State<SimpleInterestForm> {
                   padding: EdgeInsets.all(minimumPadding * 4.0),
                   child: Center(
                     child: Text(
-                      "Data",
+                      displayResult,
                       style: textStyle,
                     ),
                   )),
             ],
           )),
     );
+  }
+
+  // Function to calculate total returns from data inputted
+  String _calculateTotalReturns() {
+    double principal = double.parse(principalController.text);
+    double roi = double.parse(roiController.text);
+    double term = double.parse(termController.text);
+    double totalAmountPayable = principal + (principal * roi * term) / 100;
+
+    String result =
+        'After $term years, your investment will be worth $totalAmountPayable';
+    return result;
+  }
+
+  // Function to reset the application
+  void _reset() {
+    principalController.text = "";
+    roiController.text = "";
+    termController.text = "";
+    displayResult = "";
   }
 }

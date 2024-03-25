@@ -1,15 +1,14 @@
 # Simple Interest App v1.0
 
-Here we begin styling and theming the Simple Interest app.
+Here we begin adding logic to the application to make it functional.
 
-We learn how to apply themes to the full app and specific parts of it.
+We also rearranged our code by creating a separate file for the DropDownButton custom widget.
 
-We defined a general theme and embeded properties within using the **Theme** widget.
+While applying logic to this app, we make use of the following:
 
-We called upon those properties inside other custom widgets via **Theme.of(context)** method which
-basically allows you to retrieve the nearest Theme instance from the widget tree above the given BuildContext, and access predefined data such as color, fonts, etc.
+* TextEditingController
+* The concept of Casting
 
-We also convert the application's theme to dark mode
+Here's the pictorial representation of the application:
 
-The representation can be found below:
-
+![alt text](<Screenshot 2024-03-24 155115.png>)
