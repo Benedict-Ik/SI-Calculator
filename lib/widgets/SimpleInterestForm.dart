@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:si_calculator/widgets/DropdownButton.dart';
 import 'package:si_calculator/widgets/MoneyImageAsset.dart';
+// import 'DropdownButton.dart';
 
 class SimpleInterestForm extends StatefulWidget {
   const SimpleInterestForm({super.key});
@@ -10,6 +11,7 @@ class SimpleInterestForm extends StatefulWidget {
 }
 
 class _SimpleInterestFormState extends State<SimpleInterestForm> {
+  String _currentItemSelected = "Naira"; // Define _currentItemSelected here
   // Properties definition
   final _minimumPadding = 5.0;
 
@@ -83,7 +85,13 @@ class _SimpleInterestFormState extends State<SimpleInterestForm> {
                             ),
                           ))),
                   // Inserting DropDownButton Custom Widget
-                  DropDownButton(),
+                  DropDownButton(
+                    onItemSelected: (String value) {
+                      setState(() {
+                        _currentItemSelected = value;
+                      });
+                    },
+                  ),
                 ],
               ),
               Padding(
@@ -147,7 +155,7 @@ class _SimpleInterestFormState extends State<SimpleInterestForm> {
     double totalAmountPayable = principal + (principal * roi * term) / 100;
 
     String result =
-        'After $term years, your investment will be worth $totalAmountPayable';
+        'After $term years, your investment will be worth $totalAmountPayable $_currentItemSelected';
     return result;
   }
 
