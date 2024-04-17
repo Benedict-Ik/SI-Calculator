@@ -4,7 +4,7 @@ import 'package:si_calculator/widgets/MoneyImageAsset.dart';
 // import 'DropdownButton.dart';
 
 class SimpleInterestForm extends StatefulWidget {
-  const SimpleInterestForm({super.key});
+  const SimpleInterestForm({Key? key}) : super(key: key);
 
   @override
   State<SimpleInterestForm> createState() => _SimpleInterestFormState();
@@ -19,7 +19,6 @@ class _SimpleInterestFormState extends State<SimpleInterestForm> {
   TextEditingController principalController = TextEditingController();
   TextEditingController roiController = TextEditingController();
   TextEditingController termController = TextEditingController();
-
   var displayResult = "";
 
   @override
@@ -91,6 +90,7 @@ class _SimpleInterestFormState extends State<SimpleInterestForm> {
                         _currentItemSelected = value;
                       });
                     },
+                    key: DropDownButton.dropdownKey,
                   ),
                 ],
               ),
@@ -165,5 +165,6 @@ class _SimpleInterestFormState extends State<SimpleInterestForm> {
     roiController.text = "";
     termController.text = "";
     displayResult = "";
+    DropDownButton.dropdownKey.currentState?.resetDropdown();
   }
 }
