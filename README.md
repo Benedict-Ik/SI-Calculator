@@ -12,7 +12,7 @@ Additionally, users can reset the input fields and dropdown selection to their i
 
 ## Features Added
 1. **Dropdown Selection**: Implemented a custom DropDownButton widget to select the currency for the calculation.
-2. ***Input Fields***: Users can input the principal amount, rate of interest, and term (in years) through text fields.
+2. **Input Fields**: Users can input the principal amount, rate of interest, and term (in years) through text fields.
 3. **Calculation**: Upon pressing the "Calculate" button, the app computes the total amount payable based on the provided inputs.
 4. **Reset Functionality**: Added a "Reset" button to clear all input fields and reset the dropdown selection to its default value.
 
