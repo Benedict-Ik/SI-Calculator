@@ -8,8 +8,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // get currentItemSelected => "";
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -27,6 +25,5 @@ class MyApp extends StatelessWidget {
           ),
         ),
         home: SimpleInterestForm());
-        // home: SimpleInterestForm(currentItemSelected: currentItemSelected));
   }
 }

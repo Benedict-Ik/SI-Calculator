@@ -25,7 +25,6 @@ class _SimpleInterestFormState extends State<SimpleInterestForm> {
   Widget build(BuildContext context) {
     TextStyle? textStyle = Theme.of(context).textTheme.titleMedium;
     return Scaffold(
-      // resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text("Simple Interest Calculator"),
       ),
