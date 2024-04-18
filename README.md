@@ -45,4 +45,6 @@ Future versions of the Simple Interest App could include enhancements such as:
 ##
 **Here's the pictorial representation of the application:**
 
+![alt text](<WhatsApp Image 2024-04-18 at 13.19.37_165b8039.jpg>)
+
 ![alt text](<WhatsApp Image 2024-04-17 at 11.40.54_f30f4dcf.jpg>)
