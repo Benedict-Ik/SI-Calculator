@@ -2,9 +2,7 @@
 
 ## Overview
 
-Here we begin adding logic to the application to make it functional.
-
-We also rearranged our code by creating a separate file for the DropDownButton custom widget.
+Here we add validations to the form to check if a field is left empty or an invalid input was required.
 
 The app allows users to calculate simple interest based on the principal amount, rate of interest, and term. 
 
@@ -19,10 +17,17 @@ Additionally, users can reset the input fields and dropdown selection to their i
 ## Key Concepts Utilized
 * **TextEditingController**: Used to control the input fields and retrieve their values for calculation.
 * **Casting**: Employed casting to convert data types, such as parsing text input as double for numerical calculations.
+* **Form Validation**: Implemented form validation to ensure that numeric values are entered into the principal, rate of interest, and term fields.
+
+## Steps to implement form with validation
+1. Create a form with a **GlobalKey**
+2. Add **TextFormField** with a validation logic
+3. Use button to validate and submit the form
 
 ## Project Structure
+* **MoneyImageAsset.dart**: Contains the money image asset used in the app.
 * **DropDownButton.dart**: Defines the custom dropdown button widget for currency selection.
-* **SimpleInterestForm.dart**: Contains the main form widget for the simple interest calculator, including input fields and buttons.
+* **SimpleInterestForm.dart**: Contains the main form widget for the simple interest calculator, including input fields, buttons, and form validation.
 
 ## How to Use
 1. Enter the principal amount, rate of interest, and term in the respective text fields.
@@ -34,15 +39,10 @@ Additionally, users can reset the input fields and dropdown selection to their i
 Future versions of the Simple Interest App could include enhancements such as:
 
 1. Error handling for invalid input.
-2. Visual feedback for calculation results.
-3. Support for additional currencies or currency conversion.
-4. Integration with external APIs for real-time exchange rates.
+2. Support for additional currencies or currency conversion.
+3. Integration with external APIs for real-time exchange rates.
 
 ##
 **Here's the pictorial representation of the application:**
 
 ![alt text](<WhatsApp Image 2024-04-17 at 11.40.54_f30f4dcf.jpg>)
-
-
-## 
-**PS: The main branch portrays the last uploaded branch.**
