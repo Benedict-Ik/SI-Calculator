@@ -2,7 +2,7 @@
 
 ## Overview
 
-Here we add validations to the form to check if a field is left empty or an invalid input was required.
+Here we add validations to the form to check if a field is left empty or an invalid input was entered.
 
 The app allows users to calculate simple interest based on the principal amount, rate of interest, and term. 
 
