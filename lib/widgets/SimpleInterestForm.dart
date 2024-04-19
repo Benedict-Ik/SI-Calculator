@@ -71,6 +71,7 @@ class _SimpleInterestFormState extends State<SimpleInterestForm> {
                       padding: EdgeInsets.only(
                           top: _minimumPadding, bottom: _minimumPadding),
                       child: TextFormField(
+                        keyboardType: TextInputType.number,
                         style: textStyle,
                         controller: roiController,
                         validator: (value) {

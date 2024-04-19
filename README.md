@@ -13,6 +13,7 @@ Additionally, users can reset the input fields and dropdown selection to their i
 2. **Input Fields**: Users can input the principal amount, rate of interest, and term (in years) through text fields.
 3. **Calculation**: Upon pressing the "Calculate" button, the app computes the total amount payable based on the provided inputs.
 4. **Reset Functionality**: Added a "Reset" button to clear all input fields and reset the dropdown selection to its default value.
+5. **Comma Separated values**: Added a feature through the **intl** package that helps display the final amount in order of magnitude.
 
 ## Key Concepts Utilized
 * **TextEditingController**: Used to control the input fields and retrieve their values for calculation.
@@ -45,6 +46,6 @@ Future versions of the Simple Interest App could include enhancements such as:
 ##
 **Here's the pictorial representation of the application:**
 
-![A screen](<WhatsApp Image 2024-04-18 at 13.19.37_a954205d.jpg>)
+![Form validation with error](<Form Validator -- error.jpg>)
 
-![A screen](<WhatsApp Image 2024-04-18 at 13.32.31_89ed555b.jpg>)
+![Form validation without error](<Form validator -- error free.jpg>)
