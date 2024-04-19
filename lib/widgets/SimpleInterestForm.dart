@@ -192,7 +192,6 @@ class _SimpleInterestFormState extends State<SimpleInterestForm> {
     double principal = double.parse(principalController.text);
     double roi = double.parse(roiController.text);
     double term = double.parse(termController.text);
-
     double totalAmountPayable = principal + (principal * roi * term) / 100;
 
     // Format the totalAmountPayable as currency
