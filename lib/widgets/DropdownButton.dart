@@ -13,8 +13,9 @@ class DropDownButton extends StatefulWidget {
 }
 
 class _DropDownButtonState extends State<DropDownButton> {
-  String _currentItemSelected = "Naira"; // default value
-  final _currencies = ["Naira", "UK Pounds", "US Dollars", "Euros", "Others"];
+  String _currentItemSelected = "₦"; // default value
+  // final _currencies = ["Naira", "UK Pounds", "US Dollars", "Euros", "Others"];
+  final _currencies = ["₦", "£", "€", "\$"];
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +44,7 @@ class _DropDownButtonState extends State<DropDownButton> {
 
   void resetDropdown() {
     setState(() {
-      _currentItemSelected = "Naira";
+      _currentItemSelected = "₦";
     });
   }
 }
